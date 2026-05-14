@@ -1,0 +1,51 @@
+{
+  "manifest_version": "0.3",
+  "name": "excalidraw_local",
+  "display_name": "Excalidraw Local",
+  "version": "0.3.2",
+  "description": "Local MCP server for streaming Excalidraw diagrams with interactive editing.",
+  "long_description": "A local MCP App server built from the pnpm build output of excalidraw-mcp. It renders Excalidraw diagrams with hand-drawn SVG streaming animations, fullscreen editing, checkpoint restore, and export support.",
+  "author": {
+    "name": "Local build from excalidraw-mcp"
+  },
+  "icon": "docs/logo.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js",
+        "--stdio"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "read_me",
+      "description": "Returns the Excalidraw element format reference with color palettes, examples, and tips. Call this before using create_view."
+    },
+    {
+      "name": "create_view",
+      "description": "Renders a hand-drawn diagram using Excalidraw elements with streaming draw-on animations."
+    }
+  ],
+  "keywords": [
+    "excalidraw",
+    "mcp",
+    "drawing",
+    "diagram",
+    "local"
+  ],
+  "compatibility": {
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "license": "MIT"
+}
